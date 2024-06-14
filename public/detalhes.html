@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atletas do Botafogo em 2024</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <img src="escudo.png" alt="Logo" class="logo">
+            <h1>Atletas do Botafogo em 2024</h1>
+        </div>
+        <p>Criado com objetivos exclusivamente didáticos para a disciplina Desenvolvimento Web do Ibmec Rio.</p>
+        <button id="logout">Logout</button>
+    </header>
+
+    <main>
+        <section class="filter-buttons">
+            <button id="masculino">Masculino</button>
+            <button id="feminino">Feminino</button>
+            <button id="all">Elenco Completo</button>
+        </section>
+
+        <section class="search-bar">
+            <input type="text" id="searchInput" placeholder="Pesquisar jogadores...">
+        </section>
+
+        <section class="player-list">
+            <h2>Lista de Jogadores</h2>
+            <div id="players-container"></div>
+        </section>
+    </main>
+
+    <script type="module" src="detalhes.js"></script>
+</body>
+</html>
