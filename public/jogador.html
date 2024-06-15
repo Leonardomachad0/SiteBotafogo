@@ -1,67 +1,67 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalhes do Jogador</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="details-page">
-        <div class="player-card">
-            <img src="" alt="Player Image" id="player-photo" class="player-photo">
-            <div class="player-info">
-                <h2 id="player-name">Nome do Jogador</h2>
-                <p id="player-team">Elenco: </p>
-                <p id="player-position">Posição: </p>
-                <p id="player-games">Jogos pelo Botafogo: </p>
-                <p id="player-birth">Nascimento: </p>
-                <p id="player-height">Altura: </p>
-                <p id="player-origin">Naturalidade: </p>
-                <p id="player-details">Detalhes: </p>
-            </div>
-            <button class="back-button" onclick="voltar()">Voltar</button>
-            <button id="logout" class="logout-button">Logout</button>
-        </div>
-    </div>
+ <html lang="pt-br">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Detalhes do Jogador</title>
+     <link rel="stylesheet" href="style.css">
+ </head>
+ <body>
+     <div class="details-page">
+         <div class="player-card">
+             <img src="" alt="Player Image" id="player-photo" class="player-photo">
+             <div class="player-info">
+                 <h2 id="player-name">Nome do Jogador</h2>
+                 <p id="player-team">Elenco: </p>
+                 <p id="player-position">Posição: </p>
+                 <p id="player-games">Jogos pelo Botafogo: </p>
+                 <p id="player-birth">Nascimento: </p>
+                 <p id="player-height">Altura: </p>
+                 <p id="player-origin">Naturalidade: </p>
+                 <p id="player-details">Detalhes: </p>
+             </div>
+             <button class="back-button" onclick="voltar()">Voltar</button>
+             <button id="logout" class="logout-button">Logout</button>
+         </div>
+     </div>
 
-    <script>
-        // Verificar se o usuário está autenticado
-        if (!localStorage.getItem('auth')) {
-            window.location.href = 'index.html';
-        }
+     <script>
+         // Verificar se o usuário está autenticado
+         if (!localStorage.getItem('auth')) {
+             window.location.href = 'index.html';
+         }
 
-        // Função de logout
-        function logout() {
-            localStorage.removeItem('auth');
-            window.location.href = 'index.html';
-        }
+         // Função de logout
+         function logout() {
+             localStorage.removeItem('auth');
+             window.location.href = 'index.html';
+         }
 
-        function voltar() {
-            window.history.back();
-        }
+         function voltar() {
+             window.history.back();
+         }
 
-        document.addEventListener('DOMContentLoaded', () => {
-            const urlParams = new URLSearchParams(window.location.search);
-            const jogadorId = urlParams.get('id');
+         document.addEventListener('DOMContentLoaded', () => {
+             const urlParams = new URLSearchParams(window.location.search);
+             const jogadorId = urlParams.get('id');
 
-            fetch(`https://botafogo-atletas.mange.li/2024-1/${jogadorId}`)
-                .then(response => response.json())
-                .then(data => {
-                    document.getElementById('player-photo').src = data.imagem;
-                    document.getElementById('player-name').textContent = data.nome;
-                    document.getElementById('player-team').textContent = `Elenco: ${data.elenco}`;
-                    document.getElementById('player-position').textContent = `Posição: ${data.posicao}`;
-                    document.getElementById('player-games').textContent = `Jogos pelo Botafogo: ${data.n_jogos}`;
-                    document.getElementById('player-birth').textContent = `Nascimento: ${data.nascimento}`;
-                    document.getElementById('player-height').textContent = `Altura: ${data.altura}`;
-                    document.getElementById('player-origin').textContent = `Naturalidade: ${data.naturalidade}`;
-                    document.getElementById('player-details').textContent = `Detalhes: ${data.detalhes}`;
-                })
-                .catch(error => console.error('Error fetching player details:', error));
+             fetch(`https://botafogo-atletas.mange.li/2024-1/${jogadorId}`)
+                 .then(response => response.json())
+                 .then(data => {
+                     document.getElementById('player-photo').src = data.imagem;
+                     document.getElementById('player-name').textContent = data.nome;
+                     document.getElementById('player-team').textContent = `Elenco: ${data.elenco}`;
+                     document.getElementById('player-position').textContent = `Posição: ${data.posicao}`;
+                     document.getElementById('player-games').textContent = `Jogos pelo Botafogo: ${data.n_jogos}`;
+                     document.getElementById('player-birth').textContent = `Nascimento: ${data.nascimento}`;
+                     document.getElementById('player-height').textContent = `Altura: ${data.altura}`;
+                     document.getElementById('player-origin').textContent = `Naturalidade: ${data.naturalidade}`;
+                     document.getElementById('player-details').textContent = `Detalhes: ${data.detalhes}`;
+                 })
+                 .catch(error => console.error('Error fetching player details:', error));
 
-            document.getElementById('logout').addEventListener('click', logout);
-        });
-    </script>
-</body>
-</html>
+             document.getElementById('logout').addEventListener('click', logout);
+         });
+     </script>
+ </body>
+ </html>
