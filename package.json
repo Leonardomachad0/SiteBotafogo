@@ -2,7 +2,7 @@
   "name": "meu-projeto",
   "version": "1.0.0",
   "main": "src/index.js",
-  "homepage": "https://<seu-usuario>.github.io/<nome-do-repositorio>",
+  "homepage": "https://<https://leonardomachad0.github.io/DesenvolvimentoWeb/>",
   "scripts": {
     "start": "webpack serve --open",
     "build": "webpack --mode production",
