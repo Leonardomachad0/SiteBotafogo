@@ -1,4 +1,4 @@
-import { hex_sha256 } from './sha256.mjs';
+import { hex_sha256 } from './public/sha256.mjs';
 
  // Verificar o hash gerado para "UMASENHA"
  const senhaHashGerado = hex_sha256("UMASENHA");
