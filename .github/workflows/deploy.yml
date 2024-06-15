@@ -13,6 +13,9 @@ jobs:
       - name: Checkout the repository
         uses: actions/checkout@v2
 
+      - name: Install dependencies
+        run: npm install
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
