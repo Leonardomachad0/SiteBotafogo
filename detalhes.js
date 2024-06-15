@@ -1,3 +1,16 @@
+// Verificar se o usuário está autenticado
+if (!localStorage.getItem('auth')) {
+    window.location.href = 'index.html';
+}
+
+// Função de logout
+function logout() {
+    localStorage.removeItem('auth');
+    window.location.href = 'index.html';
+}
+
+
+
 document.addEventListener('DOMContentLoaded', () => {
     const masculinoBtn = document.getElementById('masculino');
     const femininoBtn = document.getElementById('feminino');
