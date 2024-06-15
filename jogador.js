@@ -1,6 +1,6 @@
 // Verificar se o usuário está autenticado
 if (!localStorage.getItem('auth')) {
-    window.location.href = 'index.html';
+    window.location.href = 'index.htmll';
 }
 
 // Função de logout
