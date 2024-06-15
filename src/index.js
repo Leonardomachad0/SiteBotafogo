@@ -1,4 +1,4 @@
 import '../public/style.css';
-import './script.js';
-import './detalhes.js';
-import './jogador.js';
+import '../src/script.js';
+import '../public/detalhes.js';
+import '../src/jogador.js';
