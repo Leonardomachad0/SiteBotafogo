@@ -1,5 +1,0 @@
-git submodule deinit -f --all
-git rm -f node_modules/.cache/gh-pages
-rm -rf .git/modules/node_modules/.cache/gh-pages
-
-
